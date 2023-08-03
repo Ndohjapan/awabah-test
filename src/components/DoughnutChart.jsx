@@ -25,6 +25,13 @@ export default class DoughnutChart extends PureComponent {
 
     return (
       <div className="min-h-full w-full bg-gray-50 col-span-10 lg:col-span-3 p-4">
+        <div className="sm:flex sm:items-center mb-10 w-full">
+          <div className="flex justify-between w-full">
+            <h1 className="text-base font-bold text-gray-900">
+              Beneficiary count
+            </h1>
+          </div>
+        </div>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
@@ -40,7 +47,10 @@ export default class DoughnutChart extends PureComponent {
               labelLine={false} // Set labelLine to false to remove the label lines
             >
               {dataWithPercentage.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
               ))}
             </Pie>
             <Legend
@@ -51,11 +61,20 @@ export default class DoughnutChart extends PureComponent {
               content={({ payload }) => (
                 <ul style={{ listStyleType: "none", padding: 0 }}>
                   {payload.map((entry, index) => (
-                    <li key={`item-${index}`} style={{ display: "flex", alignItems: "center", marginBottom: 5 }}>
+                    <li
+                      key={`item-${index}`}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginBottom: 5,
+                      }}
+                    >
                       <svg width="12" height="12" style={{ marginRight: 5 }}>
                         <circle cx="6" cy="6" r="5" fill={entry.color} />
                       </svg>
-                      <span style={{ color: "black" }}>{entry.payload.name} {entry.payload.percentage}%</span>
+                      <span style={{ color: "black" }}>
+                        {entry.payload.name} {entry.payload.percentage}%
+                      </span>
                     </li>
                   ))}
                 </ul>
