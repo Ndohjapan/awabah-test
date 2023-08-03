@@ -10,13 +10,14 @@ const data = [
 const COLORS = ["#49B77F66", "#49B77F40", "#49B77F"];
 
 export default class DoughnutChart extends PureComponent {
-  static demoUrl = "https://codesandbox.io/s/pie-chart-with-padding-angle-7ux0o";
+  renderCustomizedLabel = ({ cx, cy }) => {
+    // Position the larger yellow circle at the center of the PieChart
+    return <circle cx={cx} cy={cy} r={20} fill="#F3DD1D" />;
+  };
 
   render() {
-    // Calculate the total sum of all values
     const totalSum = data.reduce((sum, entry) => sum + entry.value, 0);
 
-    // Calculate the percentage for each data entry
     const dataWithPercentage = data.map((entry) => ({
       ...entry,
       percentage: ((entry.value / totalSum) * 100).toFixed(2),
@@ -35,6 +36,8 @@ export default class DoughnutChart extends PureComponent {
               fill="#8884d8"
               paddingAngle={5}
               dataKey="value"
+              label={this.renderCustomizedLabel}
+              labelLine={false} // Set labelLine to false to remove the label lines
             >
               {dataWithPercentage.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -42,7 +45,7 @@ export default class DoughnutChart extends PureComponent {
             </Pie>
             <Legend
               align="center"
-              verticalAlign="bottom" // Set to "bottom" to place the legend below the chart
+              verticalAlign="bottom"
               layout="vertical"
               wrapperStyle={{ padding: "10px" }}
               content={({ payload }) => (
