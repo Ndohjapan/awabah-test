@@ -1,30 +1,30 @@
 import { React } from "react";
 
 const bars = [
-  { hieght: "28px" },
-  { hieght: "40px" },
-  { hieght: "49px" },
-  { hieght: "28px" },
-  { hieght: "40px" },
+  { hieght: "48px" },
   { hieght: "68px" },
-  { hieght: "49px" },
-  { hieght: "92px" },
-  { hieght: "112px" },
-  { hieght: "76px" },
-  { hieght: "99px" },
+  { hieght: "84px" },
+  { hieght: "48px" },
+  { hieght: "68px" },
+  { hieght: "116px" },
+  { hieght: "84px" },
+  { hieght: "158px" },
+  { hieght: "193px" },
   { hieght: "130px" },
-  { hieght: "106px" },
-  { hieght: "60px" },
-  { hieght: "122px" },
-  { hieght: "151px" },
-  { hieght: "122px" },
-  { hieght: "92px" },
-  { hieght: "60px" },
-  { hieght: "76px" },
-  { hieght: "40px" },
-  { hieght: "49px" },
+  { hieght: "170px" },
+  { hieght: "223px" },
+  { hieght: "182px" },
+  { hieght: "102px" },
+  { hieght: "209px" },
+  { hieght: "258px" },
+  { hieght: "209px" },
+  { hieght: "158px" },
+  { hieght: "102px" },
+  { hieght: "130px" },
   { hieght: "68px" },
-  { hieght: "49px" },
+  { hieght: "84px" },
+  { hieght: "116px" },
+  { hieght: "84px" },
 ];
 
 export default function BarChart() {
@@ -42,16 +42,16 @@ export default function BarChart() {
 
           </div>
         </div>
-        <div>
+        <div className="h-full">
           <div className="absolute bottom-2 -left-6 w-8 flex flex-col justify-between text-center">
             {/* Y-axis labels */}
             <span className="text-sm">100</span>
-            <span className="text-sm mt-[33px]">75</span>
-            <span className="text-sm mt-[33px]">50</span>
-            <span className="text-sm mt-[33px]">25</span>
-            <span className="text-sm mt-[33px]">0</span>
+            <span className="text-sm mt-[60px]">75</span>
+            <span className="text-sm mt-[71px]">50</span>
+            <span className="text-sm mt-[71px]">25</span>
+            <span className="text-sm mt-[71px]">0</span>
           </div>
-          <div className="relative flex flex-col items-end justify-end h-56 overflow-x-auto">
+          <div className="relative flex flex-col items-end justify-end h-96 overflow-x-auto">
             <div className="w-full p-1 flex justify-evenly items-end">
               {bars.map((bar, index) => (
                 <div
@@ -72,10 +72,10 @@ export default function BarChart() {
             <div className="absolute w-full -left-6 flex flex-col justify-between text-center">
               {/* Y-axis labels */}
               <div className="h-1 text-sm border-b border-l-awabah-gray-400"></div>
-              <div className="h-1 text-sm border-b border-l-awabah-gray-400 mt-12"></div>
-              <div className="h-1 text-sm border-b border-l-awabah-gray-400 mt-12"></div>
-              <div className="h-1 text-sm border-b border-l-awabah-gray-400 mt-12"></div>
-              <div className="h-1 text-sm  mt-12"></div>
+              <div className="h-1 text-sm border-b border-l-awabah-gray-400 mt-[75px]"></div>
+              <div className="h-1 text-sm border-b border-l-awabah-gray-400 mt-[88px]"></div>
+              <div className="h-1 text-sm border-b border-l-awabah-gray-400 mt-[80px]"></div>
+              <div className="h-1 text-sm  mt-[94px]"></div>
             </div>
           </div>
         </div>
