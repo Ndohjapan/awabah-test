@@ -5,6 +5,7 @@ import SideBar from "../components/SideBar";
 import StickyHeader from "../components/StickyHeader";
 import NotFound from "../pages/NotFound";
 import Authorization from "../pages/Authorization";
+import DoughnutChart from "../components/DoughnutChart";
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,9 +21,10 @@ export default function Dashboard() {
           <StickyHeader setSidebarOpen={setSidebarOpen} />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/doughnut" element={<DoughnutChart />} />
             <Route path="/authorization" element={<Authorization />} />
             <Route
-              path="/*"
+              path="*"
               element={
                 <>
                   <NotFound />
