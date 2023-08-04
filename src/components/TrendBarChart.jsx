@@ -49,19 +49,19 @@ export default class TrendBarChart extends PureComponent {
     const isMobile = window.innerWidth <= 768;
     return (
       <>
-        <div className="relative col-span-10 lg:col-span-7 p-3">
+        <div className="shadow-3xl relative col-span-10 lg:col-span-7 p-3">
           <div className="sm:flex sm:items-center mb-10 w-full">
             <div className="flex justify-between w-full">
-              <h1 className="text-base font-bold text-gray-900">
+              <h1 className="text-base font-bold text-gray-900 mt-2">
                 Top performing Enterprise
               </h1>
-              <h1 className="text-xs text-gray-900">May 2023</h1>
+              <h1 className="text-xs text-gray-900 mt-2">May 2023</h1>
             </div>
           </div>
           <div className="h-full">
             <div
               className="h-full"
-              style={{ width: "100%", overflowX: "scroll" }}
+              style={{ width: "100%" }}
             >
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart
