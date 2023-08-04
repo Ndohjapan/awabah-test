@@ -36,7 +36,7 @@ const data = [
   { height: 84, date: "May 24" },
 ];
 
-export default class BarChart2 extends PureComponent {
+export default class TrendBarChart extends PureComponent {
   // Helper function to format the height data (you can modify this if needed)
 
   formatPercentage = (value) => {
@@ -47,7 +47,6 @@ export default class BarChart2 extends PureComponent {
 
   render() {
     const isMobile = window.innerWidth <= 768;
-    const xDomain = isMobile ? [4, data.length - 1] : undefined;
     return (
       <>
         <div className="relative col-span-10 lg:col-span-7 p-3">
