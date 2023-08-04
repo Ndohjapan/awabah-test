@@ -5,10 +5,10 @@ import {HiOutlineSearch} from "react-icons/hi"
 export default function OverviewHeader({data}) {
   return (
     <div className='flex justify-between'>
-        <div className='border rounded-lg p-2 min-w-[8rem] flex items-center justify-center'>
+        <div className='shadow-3xl rounded-lg p-2 min-w-[8rem] flex items-center justify-center'>
             <span>{data}</span>
         </div>
-        <div className='border rounded-lg p-2 min-w-[5rem] flex items-center justify-center'>
+        <div className='shadow-3xl rounded-lg p-2 min-w-[5rem] flex items-center justify-center'>
             <HiOutlineSearch/>
         </div>
     </div>

@@ -5,7 +5,7 @@ const users = [
   {
     name: "Omolara Dansu",
     role: "Designer",
-    border: "border-awabah-400"
+    border: "border-awabah-200"
   },
   {
     name: "Omolara Dansu",
@@ -25,7 +25,7 @@ const users = [
   {
     name: "Omolara Dansu",
     role: "Designer",
-    border: "border-awabah-400"
+    border: "border-awabah-200"
   },
   {
     name: "Omolara Dansu",
@@ -35,7 +35,7 @@ const users = [
   {
     name: "Omolara Dansu",
     role: "Designer",
-    border: "border-awabah-400"
+    border: "border-awabah-200"
   },
   {
     name: "Omolara Dansu",
@@ -45,7 +45,7 @@ const users = [
   {
     name: "Omolara Dansu",
     role: "Designer",
-    border: "border-awabah-400"
+    border: "border-awabah-200"
   },
   {
     name: "Omolara Dansu",
@@ -55,7 +55,7 @@ const users = [
   {
     name: "Omolara Dansu",
     role: "Designer",
-    border: "border-awabah-400"
+    border: "border-awabah-200"
   },
   {
     name: "Omolara Dansu",
@@ -68,12 +68,12 @@ export default function TeamView() {
   return (
     <>
       <div className="grid grid-cols-2 gap-6">
-          <div className="p-4 col-span-2 lg:col-span-1">
+          <div className="p-4 px-6 col-span-2 lg:col-span-1 shadow-3xl">
 
           <h1 className="text-center text-lg mt-4 mb-6 font-medium">Sub Admin</h1>
           <ul
             role="list"
-            className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+            className="grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
           >
             {users.map((file, index) => (
               <li key={index} className="relative cursor-pointer flex flex-col items-center justify-center">
@@ -90,12 +90,12 @@ export default function TeamView() {
             ))}
           </ul>
           </div>
-          <div className="p-4 col-span-2 lg:col-span-1">
+          <div className="p-4 px-6 col-span-2 lg:col-span-1 shadow-3xl">
 
           <h1 className="text-center text-lg mt-4 mb-6 font-medium">Internal Management</h1>
           <ul
             role="list"
-            className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+            className="grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
           >
             {users.map((file, index) => (
               <li key={index} className="relative cursor-pointer flex flex-col items-center justify-center">

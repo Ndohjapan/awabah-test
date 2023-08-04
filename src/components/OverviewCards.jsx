@@ -35,7 +35,7 @@ export default function OverviewCards() {
       {people.map((person) => (
         <li
           key={person.name}
-          className="col-span-1 bg-awabah-300 rounded-lg shadow divide-y divide-gray-200"
+          className="shadow-3xl col-span-1 bg-awabah-300 rounded-lg divide-y divide-gray-200"
         >
           <div className="w-full flex items-center justify-between p-6 space-x-6">
             <div className="flex truncate">
@@ -51,8 +51,8 @@ export default function OverviewCards() {
             </div>
           </div>
           <div>
-            <div className="-mt-px flex divide-x divide-gray-200 border border-t-awabah-gray-400">
-              <div className="w-0 flex-1 flex border border-r-awabah-gray-400">
+            <div className="-mt-px flex divide-x divide-gray-200 border-t border-t-awabah-gray-400">
+              <div className="w-0 flex-1 flex border-r lg:border-r-2 border-r-awabah-gray-400">
                 <a
                   href="#"
                   className="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500"
@@ -60,7 +60,7 @@ export default function OverviewCards() {
                   <span className="text-base">{person.left}</span>
                 </a>
               </div>
-              <div className="-ml-px w-0 flex-1 flex border border-l-awabah-gray-400">
+              <div className="-ml-px w-0 flex-1 flex border-l border-l-awabah-gray-400">
                 <a
                   href="#"
                   className="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500"

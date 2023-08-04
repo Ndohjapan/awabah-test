@@ -24,10 +24,10 @@ export default class DoughnutChart extends PureComponent {
     }));
 
     return (
-      <div className="min-h-full w-full bg-gray-50 col-span-10 lg:col-span-3 p-4">
+      <div className="shadow-3xl min-h-full w-full col-span-10 lg:col-span-3 p-4">
         <div className="sm:flex sm:items-center mb-10 w-full">
           <div className="flex justify-between w-full">
-            <h1 className="text-base font-bold text-gray-900">
+            <h1 className="text-base font-bold text-gray-900 mt-2">
               Beneficiary count
             </h1>
           </div>
@@ -54,8 +54,8 @@ export default class DoughnutChart extends PureComponent {
               ))}
             </Pie>
             <Legend
-              align="center"
-              verticalAlign="bottom"
+              align="right"
+              verticalAlign="middle"
               layout="vertical"
               wrapperStyle={{ padding: "10px" }}
               content={({ payload }) => (

@@ -139,8 +139,8 @@ export default function SideBar({ sidebarOpen, setSidebarOpen, pathname }) {
               <div className="flex-shrink-0 flex items-center px-4">
                 <img className="h-12 w-auto" src={images.logo} alt="Valubah" />
               </div>
-              <div className="mt-5 flex-1 h-0 overflow-y-auto">
-                <nav className="px-2 space-y-1">
+              <div className="mt-5 mr-2 ml-4 flex-1 h-0 overflow-y-auto shadow-3xl rounded-sm">
+                <nav className="px-2 space-y-1 pt-4">
                   {stateNavigation.map((item) => (
                     <Link
                       key={item.name}
@@ -216,12 +216,12 @@ export default function SideBar({ sidebarOpen, setSidebarOpen, pathname }) {
       {/* Static sidebar for desktop */}
       <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className="flex flex-col flex-grow border-r border-gray-200 pt-1 bg-white overflow-y-auto">
+        <div className="flex flex-col flex-grow pt-1 bg-white overflow-y-auto">
           <div className="flex items-center justify-center flex-shrink-0 px-4">
             <img className="h-12 w-auto" src={images.logo} alt="Valubah" />
           </div>
-          <div className="mt-5 flex-grow flex flex-col">
-            <nav className="flex-1 px-2 pb-4 space-y-1">
+          <div className="mt-5 mr-2 ml-4 flex-grow flex flex-col shadow-3xl rounded-sm">
+            <nav className="flex-1 px-2 pb-4 space-y-1 pt-4">
               {stateNavigation.map((item) => (
                 <Link
                   key={item.name}
