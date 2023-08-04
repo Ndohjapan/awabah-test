@@ -10,6 +10,7 @@ import {
 import UserSettings from "../assets/UserSettings";
 import Logout from "../assets/Logout";
 import Settings from "../assets/Settings";
+import images from "../assets/images.json"
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HiOutlineHome, current: true },
@@ -92,7 +93,7 @@ export default function SideBar({ sidebarOpen, setSidebarOpen }) {
               <div className="flex-shrink-0 flex items-center px-4">
                 <img
                   className="h-12 w-auto"
-                  src="https://res.cloudinary.com/lcu-feeding/image/upload/v1691036637/signupDocs/Rectangle_249_1_posbcm.svg"
+                  src={images.logo}
                   alt="Valubah"
                 />
               </div>
@@ -176,7 +177,7 @@ export default function SideBar({ sidebarOpen, setSidebarOpen }) {
           <div className="flex items-center justify-center flex-shrink-0 px-4">
             <img
               className="h-12 w-auto"
-              src="https://res.cloudinary.com/lcu-feeding/image/upload/v1691036637/signupDocs/Rectangle_249_1_posbcm.svg"
+              src={images.logo}
               alt="Valubah"
             />
           </div>
