@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import {
@@ -10,23 +10,39 @@ import {
 import UserSettings from "../assets/UserSettings";
 import Logout from "../assets/Logout";
 import Settings from "../assets/Settings";
-import images from "../assets/images.json"
+import images from "../assets/images.json";
+import {Link} from "react-router-dom"
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HiOutlineHome, current: true },
+  {
+    name: "Dashboard",
+    icon: HiOutlineHome,
+    current: false,
+    pathname: "/",
+  },
   {
     name: "Vlauebah Plans",
-    href: "#",
     icon: HiOutlineBuildingOffice2,
     current: false,
+    pathname: "/plans",
   },
-  { name: "Beneficiary", href: "#", icon: HiOutlineUsers, current: false },
-  { name: "Dash Dem", href: "#", icon: HiOutlineGift, current: false },
+  {
+    name: "Beneficiary",
+    icon: HiOutlineUsers,
+    current: false,
+    pathname: "/beneficiary",
+  },
+  {
+    name: "Dash Dem",
+    icon: HiOutlineGift,
+    current: false,
+    pathname: "/sponsor",
+  },
   {
     name: "User Authentication",
-    href: "#",
     icon: UserSettings,
     current: false,
+    pathname: "/authorization",
   },
 ];
 
@@ -40,7 +56,37 @@ function classNames(...classes) {
 }
 
 // eslint-disable-next-line react/prop-types
-export default function SideBar({ sidebarOpen, setSidebarOpen }) {
+export default function SideBar({ sidebarOpen, setSidebarOpen, pathname }) {
+  const [stateNavigation, setStateNavigation] = useState(navigation);
+
+  useEffect(() => {
+    const newNavigation = []
+    navigation.forEach((nav) => {
+        if(nav.pathname === pathname){
+            nav.current = true;
+        }
+
+        newNavigation.push(nav);
+    })
+
+    setStateNavigation(newNavigation);
+  }, [pathname]);
+
+  const updateSideBar = (pathname) => {
+    const newNavigation = []
+    navigation.forEach((nav) => {
+        nav.current = false;
+
+        if(nav.pathname === pathname){
+            nav.current = true;
+        }
+
+        newNavigation.push(nav);
+    })
+    setStateNavigation(newNavigation);
+
+  }
+
   return (
     <>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -91,18 +137,15 @@ export default function SideBar({ sidebarOpen, setSidebarOpen }) {
                 </div>
               </Transition.Child>
               <div className="flex-shrink-0 flex items-center px-4">
-                <img
-                  className="h-12 w-auto"
-                  src={images.logo}
-                  alt="Valubah"
-                />
+                <img className="h-12 w-auto" src={images.logo} alt="Valubah" />
               </div>
               <div className="mt-5 flex-1 h-0 overflow-y-auto">
                 <nav className="px-2 space-y-1">
-                  {navigation.map((item) => (
-                    <a
+                  {stateNavigation.map((item) => (
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.pathname}
+                      onClick={() => {updateSideBar(item.pathname)}}
                       className={classNames(
                         item.current
                           ? "bg-gray-100 text-gray-900"
@@ -120,7 +163,7 @@ export default function SideBar({ sidebarOpen, setSidebarOpen }) {
                         aria-hidden="true"
                       />
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                   <div
                     className="m-8"
@@ -175,18 +218,15 @@ export default function SideBar({ sidebarOpen, setSidebarOpen }) {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex flex-col flex-grow border-r border-gray-200 pt-1 bg-white overflow-y-auto">
           <div className="flex items-center justify-center flex-shrink-0 px-4">
-            <img
-              className="h-12 w-auto"
-              src={images.logo}
-              alt="Valubah"
-            />
+            <img className="h-12 w-auto" src={images.logo} alt="Valubah" />
           </div>
           <div className="mt-5 flex-grow flex flex-col">
             <nav className="flex-1 px-2 pb-4 space-y-1">
-              {navigation.map((item) => (
-                <a
+              {stateNavigation.map((item) => (
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.pathname}
+                  onClick={() => {updateSideBar(item.pathname)}}
                   className={classNames(
                     item.current
                       ? "bg-gray-100 text-gray-900"
@@ -204,7 +244,7 @@ export default function SideBar({ sidebarOpen, setSidebarOpen }) {
                     aria-hidden="true"
                   />
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div
                 className="m-8"

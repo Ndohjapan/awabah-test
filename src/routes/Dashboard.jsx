@@ -10,12 +10,15 @@ import DoughnutChart from "../components/DoughnutChart";
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  
+  const pathName = window.location.pathname;  
   return (
     <>
       <div>
         <SideBar
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
+          pathname={pathName}
         />
         <div className="md:pl-64 flex flex-col flex-1">
           <StickyHeader setSidebarOpen={setSidebarOpen} />
