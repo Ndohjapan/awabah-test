@@ -15,9 +15,9 @@ function classNames(...classes) {
 export default function GraphRange({ data }) {
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center">
         <div className="shadow-3xl min-h-full p-2 px-4 rounded-md">{data}</div>
-        <div className="flex justify-around">
+        <div className="ml-5 flex justify-around">
           {range.map((each, index) => (
             <button
               key={index}
